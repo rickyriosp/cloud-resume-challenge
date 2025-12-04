@@ -7,8 +7,8 @@
   --line: #bbb;
   --maxw: 800px;
   --leading: 1.25;
-  --section-gap: 18px;
-  --item-gap: 12px;
+  --section-gap: 12px;
+  --item-gap: 10px;
   --font-size: 12.5pt; /* ~10-12 pt typical resume sizes */
 }
 
@@ -70,7 +70,7 @@ body {
   font-variant: small-caps;
   letter-spacing: 0.6px;
   font-weight: 600;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   padding-top: 8px;
 }
 
@@ -84,11 +84,11 @@ body {
   flex-wrap: wrap;
 }
 
-.org { font-weight: 700; }
+.role { font-weight: 700; }
 .meta { color: var(--muted); white-space: nowrap; }
 .meta .dot { margin: 0 6px; color: var(--muted); }
 
-.role {
+.org {
   margin: 2px 0 4px;
   font-style: italic;
 }

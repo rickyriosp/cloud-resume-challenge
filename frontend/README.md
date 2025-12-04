@@ -36,7 +36,11 @@ Please use the least amount of CSS tags necessary to achieve a clean and profess
 Image provided to LLM:
 ![](./docs/harvard-resume-tempate.png)
 
-This is the [generated code](./docs/2025-12-04-resume-template.html) for the resume website which I will refactor.
+This is the [generated output](./docs/2025-12-04-resume-template.html) for the resume website which I will refactor.
+
+This is what the generated HTML looks like unaltered:
+
+![](./docs/harvard-resume-tempate-rendered.jpg)
 
 ### HTML Adjustments
 
