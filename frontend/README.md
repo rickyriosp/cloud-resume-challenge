@@ -2,7 +2,7 @@
 
 - Create a static webiste that serves an HTML resume.
 
-### Resume Format Considerations
+## Resume Format Considerations
 
 I live in the United States, so the resume should follow the US format, which typically includes:
 - Contact Information: Name, phone number, email address, LinkedIn profile, and GitHub link.
@@ -18,14 +18,14 @@ I live in the United States, so the resume should follow the US format, which ty
 - Design: Clean and professional design, avoiding excessive graphics or colors.
 - Exclude Personal Information: Avoid including personal details such as age, marital status, or a photograph, things that can lead to discrimination or bias.
 
-### Resume Format Generation
+## Resume Format Generation
 
 I'm going to use the [Harvard Resume Template](https://careerservices.fas.harvard.edu/resources/harvard-college-resume-example-tech/) as a base for the resume format. It is a clean and professional template that aligns well with the considerations mentioned above.
 
 I know HTML and CSS well enough, so I'm going to let GenAI do the heavy lifting of generating the initial code for the resume based on the Harvard template.
 I will then review and tweak the generated code to ensure it meets my specific needs and preferences.
 
-Proomt to ChatGPT 5:
+Promt to ChatGPT 5:
 
 ```text
 Convert this resume format into a static HTML and CSS code for a personal resume website.
@@ -34,6 +34,7 @@ Please use the least amount of CSS tags necessary to achieve a clean and profess
 ```
 
 Image provided to LLM:
+
 ![](./docs/harvard-resume-tempate.png)
 
 This is the [generated output](./docs/2025-12-04-resume-template.html) for the resume website which I will refactor.
@@ -42,8 +43,33 @@ This is what the generated HTML looks like unaltered:
 
 ![](./docs/harvard-resume-tempate-rendered.jpg)
 
-### HTML Adjustments
+## HTML Adjustments
 
 - We'll extract our styles into its own stylesheet after we are happy with our HTML markup.
 - We'll simplify some of the HTML structure to make it cleaner and easier to maintain.
 - For the HTML page I'll use soft tabs two spaces for indentation.
+
+## Serve Static Website Locally
+
+We need to serve our static website locally so we can start using stylesheets externally from our HTML page in a Cloud Developer Environment (CDE).
+
+> This is not nnecessary with local development.
+
+Assuming we have node installed, we'll use the simple web-server http-server
+
+## Install HTTP server
+
+```sh
+cd frontend
+npm i -g http-server
+```
+
+## Serve Website
+
+http-server will serve a public folder by default
+
+## Image Size Considerations
+
+I have a background JPG texture that was 818KB.
+I'm going to optimize it to WEBP with an online tool.
+Optimized image size is 216KB.
