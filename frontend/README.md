@@ -68,6 +68,10 @@ npm i -g http-server
 
 http-server will serve a public folder by default
 
+```sh
+http-server
+```
+
 ## Image Size Considerations
 
 I have a background JPG texture that was 818KB.
