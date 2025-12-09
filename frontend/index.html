@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ricky Rios | Web Developer</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:title" content="Ricky's Portfolio" />
+    <meta property="og:url" content="https://riosr.com" />
+    <meta property="og:image" content="https://riosr.com/frontend/assets/images/og-portfolio.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Ricky Rios | Web Developer" />
+    <meta name="author" content="Ricky Rios" />
+
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/frontend/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/frontend/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/frontend/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/frontend/assets/images/favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="/frontend/assets/images/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Devicons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/plugins/tiny-slider/tiny-slider.css" />
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css" />
+
+    <!-- Custom CSS (Add your custom CSS styles to this file)-->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Resume CSS -->
+    <link rel="stylesheet" href="assets/css/resume.css" />
+
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="10" tabindex="0">
+    <!-- sidebar -->
+    <header class="header text-center">
+        <!-- force-overflow -->
+        <div class="force-overflow">
+            <h1 class="blog-name pt-lg-4 mb-0">
+                <a class="no-text-decoration" href="index.html">Ricky Rios</a>
+            </h1>
+
+            <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
+                    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navigation" class="collapse navbar-collapse flex-column">
+                    <!-- profile-section -->
+                    <div class="profile-section pt-3 pt-lg-0">
+                        <a href="/index.html">
+                            <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile-pic.jpg"
+                                alt="image" />
+                        </a>
+
+                        <!-- bio -->
+                        <div class="bio mb-3">
+                            Hi, my name is Ricky and I'm a full-stack web developer. Welcome!
+                        </div>
+
+                        <!-- social-list -->
+                        <ul class="social-list list-inline py-2 mx-auto">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/rickyriosp/" target="_blank">
+                                    <i class="fab fa-linkedin-in fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/rickyriosp" target="_blank">
+                                    <i class="fab fa-github-alt fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://x.com/rickyriosp" target="_blank">
+                                    <i class="fa-brands fa-square-x-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <hr />
+                    </div>
+
+                    <!-- sidebar-navigation -->
+                    <ul class="navbar-nav flex-column text-start">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-me"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills" data-bs-scroll><i
+                                    class="fas fa-laptop-code fa-fw me-2"></i>Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects"><i class="fas fa-briefcase fa-fw me-2"></i>Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challenges"><i class="fas fa-code fa-fw me-2"></i>Coding
+                                Challenges</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog"><i class="fas fa-blog fa-fw me-2"></i>Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resume"><i class="fas fa-file fa-fw me-2"></i>Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"><i
+                                    class="fas fa-envelope-open-text fa-fw me-2"></i>Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- call-to-action -->
+                    <div class="my-2">
+                        <a class="btn btn-primary" href="#contact"><i class="fas fa-paper-plane me-2"></i>Hire Me</a>
+                    </div>
+
+                    <!-- dark-mode-toggle -->
+                    <div class="dark-mode-toggle text-center w-100">
+                        <hr class="mb-4" />
+                        <h4 class="toggle-name mb-3"><i class="fas fa-adjust me-1"></i>Dark Mode</h4>
+
+                        <input class="toggle" id="darkmode" type="checkbox" />
+                        <label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
+                    </div>
+
+                    <!-- visits-counter -->
+                    <div class="visits-counter text-center w-100">
+                        <hr class="mb-4" />
+                        <p class="counter-name mb-3">
+                            <i class="fas fa-users me-1"></i>
+                            Visitors:
+                            <span class="counter-number" id="counter-value">0</span>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- main-wrapper -->
+    <div class="main-wrapper">
+        <!-- about-me-section -->
+        <section id="about-me" class="about-me-section p-3 p-lg-5 theme-bg-light">
+            <div class="container">
+                <div class="profile-teaser row">
+                    <!-- col -->
+                    <div class="col">
+                        <h2 class="name font-weight-bold mb-1">Ricky Rios</h2>
+                        <div class="tagline mb-3">Full-Stack Web Developer</div>
+
+                        <!-- bio -->
+                        <div class="bio mb-4">
+                            I am a software developer based in Florida and I build websites and web
+                            applications, which comply with the latest design trends. I can help craft your
+                            vision into professional, fast, secure, and scalable web applications.
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col">
+                                <a class="btn btn-primary me-2 mb-3" href="#projects"><i class="fas fa-arrow-alt-circle-right me-2"></i><span
+                                        class="d-none d-md-inline">View</span> Projects</a>
+                                <a class="btn btn-secondary mb-3" href="#resume"><i class="fas fa-file-alt me-2"></i><span
+                                        class="d-none d-md-inline">View</span> Resume</a>
+                            </div>
+
+                            <!-- visits-counter -->
+                            <div class="visits-counter col text-center align-self-center w-100">
+                                <p class="counter-name mb-3">
+                                    <i class="fas fa-users me-1"></i>
+                                    Visitors:
+                                    <span class="counter-number" id="counter-value">0</span>
+
+                                    <!-- <button id="get-counter-btn" class="btn btn-secondary btn-sm me-2">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button> -->
+                                    <button id="increment-counter-btn" class="btn btn-primary btn-sm p-1">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-lg-5">
+                        <img class="profile-image img-fluid mb-3 mb-lg-0 me-md-0 rounded-circle"
+                            src="assets/images/profile-pic.jpg" alt="Profile Picture" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills-section -->
+        <section id="skills" class="overview-section p-3 p-lg-5">
+            <!-- container -->
+            <div class="container">
+                <h2 class="section-title font-weight-bold mb-3">What I do</h2>
+                <div class="section-intro mb-5">
+                    I am a creative problem solver. I build fullstack web applications using Java, Spring,
+                    Spring Boot, SQL, Javascript, Bootstrap, HTML, and CSS. I have highlighted the key
+                    technical skills that I will bring to your project.
+                </div>
+
+                <!-- row -->
+                <div class="row">
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-java-plain-wordmark colored" style="font-size: 60pt"
+                                alt="Java Icon"></i>
+                            <h3 class="item-title">Java Development</h3>
+                            <div class="item-desc">
+                                I use Java on a daily basis to build websites. You can see examples of my work
+                                implementing Java in my projects section.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-spring-original-wordmark colored" style="font-size: 60pt"
+                                alt="Spring Icon"></i>
+                            <h3 class="item-title">Full Stack Web Development</h3>
+                            <div class="item-desc">
+                                I use proven design patterns and frameworks to build websites. Java and Spring
+                                fits the bill for most projects.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-html5-plain colored" style="font-size: 60pt"
+                                alt="Html Icon"></i>
+                            <i class="icon devicon-javascript-plain colored" style="font-size: 60pt"
+                                alt="JavaScript Icon"></i>
+                            <i class="icon devicon-angular-plain colored" style="font-size: 60pt"
+                                alt="Angular Icon"></i>
+                            <h3 class="item-title">Front End Development</h3>
+                            <div class="item-desc">
+                                I use HTML, CSS and Javascript to build atractive responsive frontend for
+                                websites. To see my front end work go to my coding challenges or projects section.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-azuresqldatabase-plain colored" style="font-size: 60pt;"></i>
+                            <h3 class="item-title">Database Development</h3>
+                            <div class="item-desc">
+                                Database development is critical to most projects. I am well versed in SQL
+                                Development from queries to design.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-bootstrap-plain colored" style="font-size: 60pt"
+                                alt="Bootstrap Icon"></i>
+                            <h3 class="item-title">Front End Design</h3>
+                            <div class="item-desc">
+                                The look and feel are very important elements to any project. I use Bootstrap to
+                                bring an attractive design to your web projects.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item col-12 col-md-6 col-lg-4">
+                        <!-- item-inner -->
+                        <div class="item-inner">
+                            <i class="icon devicon-git-plain colored" style="font-size: 60pt"
+                                alt="Git Icon"></i>
+                            <h3 class="item-title">Source Control</h3>
+                            <div class="item-desc">
+                                I make sure to use source control in all my projects. This helps me ensure I'm
+                                always working on the right version of the code.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr />
+        </div>
+
+        <!-- projects-section -->
+        <section id="projects" class="featured-section portfolio-area p-3 p-lg-5">
+            <!-- container -->
+            <div class="container">
+                <h2 class="section-title font-weight-bold mb-3">Featured Projects</h2>
+                <div class="section-intro mb-5">
+                    Showcasing complete functional projects demonstrates what I can bring to your project. I
+                    built these projects from the ground up to demonstrate skills in front-end, back-end,
+                    security and database development. All these projects are fullstack web projects that
+                    are built so that you can demo them easily. Contact me to get a complete code
+                    walkthrough.
+                </div>
+
+                <!-- thumbnail-list-->
+                <div class="portfolio-grid row">
+                    <!-- single-item -->
+                    <div class="single-item col-12 col-md-6 col-xl-4 design">
+                        <a class="portfolio-item" role="button" data-bs-toggle="modal" data-bs-target="#modal-4">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Item" src="assets/images/project/ecommerce-store.png" />
+                                <div class="portfolio-item-content">
+                                    <h6 class="content-title">Ecommerce Store</h6>
+                                    <span class="content-more">More Info</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- single-item -->
+                    <div class="single-item col-12 col-md-6 col-xl-4 design">
+                        <a class="portfolio-item" role="button" data-bs-toggle="modal" data-bs-target="#modal-3">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Item" src="assets/images/project/moviepro.png" />
+                                <div class="portfolio-item-content">
+                                    <h6 class="content-title">Movie Pro</h6>
+                                    <span class="content-more">More Info</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- single-item -->
+                    <div class="single-item col-12 col-md-6 col-xl-4 design">
+                        <a class="portfolio-item" role="button" data-bs-toggle="modal" data-bs-target="#modal-2"
+                            href="#item-2">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Item" src="assets/images/project/blog.png" />
+                                <div class="portfolio-item-content">
+                                    <h6 class="content-title">Personal Blog</h6>
+                                    <span class="content-more">More Info</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- single-item -->
+                    <div class="single-item col-12 col-md-6 col-xl-4 design">
+                        <a class="portfolio-item" role="button" data-bs-toggle="modal" data-bs-target="#modal-1">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Item" src="assets/images/project/addressbook.png" />
+                                <div class="portfolio-item-content">
+                                    <h6 class="content-title">Address Book</h6>
+                                    <span class="content-more">More Info</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="modal-4" tabindex="-1" aria-labelledby="modal-4" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row gy-2">
+                                <div class="col-12 col-lg-5">
+                                    <img src="assets/images/project/ecommerce-store.png" alt="Project Image"
+                                        class="img-fluid w-100" />
+                                </div>
+                                <div class="col-12 col-lg-7 d-flex flex-column">
+                                    <h3 class="content-title">Ecommerce Store</h3>
+                                    <div class="content-description">
+                                        <p>
+                                            A custom ecommerce store built using Spring Boot backend and Angular
+                                            frontend.
+                                        </p>
+                                        <p>
+                                            Features user authentication, roles, and security using Okta, Stripe
+                                            payments, order history, and much more. Click the link below to find out
+                                            more!
+                                        </p>
+                                    </div>
+                                    <ul class="list-inline content-info mt-auto">
+                                        <li class="list-inline-item single-info">
+                                            <span>Technologies:</span>
+                                            <p>Java, Spring, Spring Boot, PostgreSQL, Angular, Bootstrap</p>
+                                        </li>
+                                    </ul>
+
+                                    <div class="link-mask-text mb-0">
+                                        <a class="btn btn-secondary m-2" href="https://ecommerce.riosr.com"
+                                            target="_blank">
+                                            <i class="fas fa-globe me-2"></i>Live Demo
+                                        </a>
+                                        <a class="btn btn-secondary m-2"
+                                            href="https://github.com/rickyriosp/spring-boot-ecommerce" target="_blank">
+                                            <i class="fab fa-github me-2"></i>Github
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="modal-3" tabindex="-1" aria-labelledby="modal-3" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row gy-2">
+                                <div class="col-12 col-lg-5">
+                                    <img src="assets/images/project/moviepro.png" alt="Project Image"
+                                        class="img-fluid w-100" />
+                                </div>
+                                <div class="col-12 col-lg-7 d-flex flex-column">
+                                    <h3 class="content-title">Movie Pro</h3>
+                                    <div class="content-description">
+                                        <p>
+                                            Personal movie collection application, organize your movies just the way you
+                                            like them. Uses TMDB API to get movie data.
+                                        </p>
+                                        <p>
+                                            Features user authentication, roles, security, custom movie collections, and
+                                            much more. Click the link below to find out more!
+                                        </p>
+                                    </div>
+                                    <ul class="list-inline content-info mt-auto">
+                                        <li class="list-inline-item single-info">
+                                            <span>Technologies:</span>
+                                            <p>C#, ASP.NET, MVC, PostgreSQL, Bootstrap</p>
+                                        </li>
+                                    </ul>
+
+                                    <div class="link-mask-text mb-0">
+                                        <a class="btn btn-secondary m-2" href="https://moviepro.riosr.com"
+                                            target="_blank">
+                                            <i class="fas fa-globe me-2"></i>Live Demo
+                                        </a>
+                                        <a class="btn btn-secondary m-2"
+                                            href="https://github.com/rickyriosp/MovieProMVC" target="_blank">
+                                            <i class="fab fa-github me-2"></i>Github
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="modal-2" tabindex="-1" aria-labelledby="modal-2" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row gy-2">
+                                <div class="col-12 col-lg-5">
+                                    <img src="assets/images/project/blog.png" alt="Project Image"
+                                        class="img-fluid w-100" />
+                                </div>
+                                <div class="col-12 col-lg-7 d-flex flex-column">
+                                    <h3 class="content-title">Personal Blog</h3>
+                                    <div class="content-description">
+                                        <p>
+                                            I built this blog application using ASP.NET and the MVC pattern. It features
+                                            user account creation, user roles, security, comments, tags, multiple blogs,
+                                            and so much more!
+                                        </p>
+                                        <p>Feel free to explore it by clicking the button below!</p>
+                                    </div>
+                                    <ul class="list-inline content-info mt-auto">
+                                        <li class="list-inline-item single-info">
+                                            <span>Technologies:</span>
+                                            <p>C#, ASP.NET, MVC, PostgreSQL, Bootstrap</p>
+                                        </li>
+                                    </ul>
+
+                                    <div class="link-mask-text mb-0">
+                                        <a class="btn btn-secondary m-2" href="https://blog.riosr.com" target="_blank">
+                                            <i class="fas fa-globe me-2"></i>Live Demo
+                                        </a>
+                                        <a class="btn btn-secondary m-2"
+                                            href="https://github.com/rickyriosp/BlogProject" target="_blank">
+                                            <i class="fab fa-github me-2"></i>Github
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="modal-1" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row gy-2">
+                                <div class="col-12 col-lg-5">
+                                    <img src="assets/images/project/addressbook.png" alt="Project Image"
+                                        class="img-fluid w-100" />
+                                </div>
+                                <div class="col-12 col-lg-7 d-flex flex-column">
+                                    <h3 class="content-title">Address Book</h3>
+                                    <div class="content-description">
+                                        <p>Organize all your contacts with this helpful web application.</p>
+                                        <p>Developed with ASP.NET using the MVC pattern.</p>
+                                    </div>
+                                    <ul class="list-inline content-info mt-auto">
+                                        <li class="list-inline-item single-info">
+                                            <span>Technologies:</span>
+                                            <p>C#, ASP.NET, MVC, PostgreSQL, Bootstrap</p>
+                                        </li>
+                                    </ul>
+
+                                    <div class="link-mask-text mb-0">
+                                        <a class="btn btn-secondary m-2" href="https://addressbook.riosr.com"
+                                            target="_blank">
+                                            <i class="fas fa-globe me-2"></i>Live Demo
+                                        </a>
+                                        <a class="btn btn-secondary m-2"
+                                            href="https://github.com/rickyriosp/AddressBookMVC" target="_blank">
+                                            <i class="fab fa-github me-2"></i>Github
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr />
+        </div>
+
+        <!-- challenges-section -->
+        <section id="challenges" class="testimonials-section portfolio-area p-3 p-lg-5">
+            <div class="container">
+                <h2 class="section-title font-weight-bold mb-3">Coding Challenges</h2>
+                <div class="section-intro mb-5">
+                    I like to challenge myself and learn new things. Coding Challenges allow me to solve new
+                    problems with code but on a smaller scale than a full project. Plus they are fun to do!
+                    Each coding challenge is displayed in their own mini sites that allows you to interact
+                    with the challenges.
+                </div>
+
+                <div class="testiomonial-carousel-container">
+                    <div class="testimonial-carousel portfolio-grid tiny-slider">
+                        <div class="single-item col-6 col-lg-4 design">
+                            <a class="portfolio-item" href="https://loanshark.riosr.com/" target="_blank">
+                                <div class="portfolio-wrapper">
+                                    <img class="img-fluid" alt="Item"
+                                        src="assets/images/challenges/loanshark-logo.svg" />
+                                    <div class="portfolio-item-content">
+                                        <h6 class="content-title">Loan Shark</h6>
+                                        <span class="content-more">Live Demo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--//item-->
+
+                        <div class="single-item col-6 col-lg-4 design">
+                            <a class="portfolio-item" href="https://tacocat.riosr.com/" target="_blank">
+                                <div class="portfolio-wrapper">
+                                    <img class="img-fluid" alt="Item" src="assets/images/challenges/tacocat-logo.svg" />
+                                    <div class="portfolio-item-content">
+                                        <h6 class="content-title">Taco Cat</h6>
+                                        <span class="content-more">Live Demo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--//item-->
+
+                        <div class="single-item col-6 col-lg-4 design">
+                            <a class="portfolio-item" href="https://fizzbuzz.riosr.com/" target="_blank">
+                                <div class="portfolio-wrapper">
+                                    <img class="img-fluid" alt="Item"
+                                        src="assets/images/challenges/fizzbuzz-logo.svg" />
+                                    <div class="portfolio-item-content">
+                                        <h6 class="content-title">Fizz Buzz</h6>
+                                        <span class="content-more">Live Demo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--//item-->
+
+                        <div class="single-item col-6 col-lg-4 design">
+                            <a class="portfolio-item" href="https://rewind.riosr.com/" target="_blank">
+                                <div class="portfolio-wrapper">
+                                    <img class="img-fluid" alt="Item" src="assets/images/challenges/rewind-logo.svg" />
+                                    <div class="portfolio-item-content">
+                                        <h6 class="content-title">Rewind</h6>
+                                        <span class="content-more">Live Demo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--//item-->
+
+                        <div class="single-item col-6 col-lg-4 design">
+                            <a class="portfolio-item" href="https://the100.riosr.com/" target="_blank">
+                                <div class="portfolio-wrapper">
+                                    <img class="img-fluid" alt="Item" src="assets/images/challenges/the100-logo.svg" />
+                                    <div class="portfolio-item-content">
+                                        <h6 class="content-title">The Hundred</h6>
+                                        <span class="content-more">Live Demo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--//item-->
+                    </div>
+                    <!--//testimonial-carousel-->
+                </div>
+                <!--//testimonial-carousel-container-->
+            </div>
+            <!--//container-->
+        </section>
+
+        <div class="container">
+            <hr />
+        </div>
+
+        <!-- latest-blog-section -->
+        <section id="blog" class="latest-blog-section p-3 p-lg-5">
+            <!-- container -->
+            <div class="container">
+                <h2 class="section-title font-weight-bold mb-5">Latest Blog Posts</h2>
+                <!-- row -->
+                <div class="row" id="blog-posts-container">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
+
+                <div class="text-center py-3">
+                    <a href="https://blog.riosr.com" class="btn btn-primary" target="_blank"><i
+                            class="fas fa-arrow-alt-circle-right me-2"></i>View Blog</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr />
+        </div>
+
+        <!-- resume-section -->
+        <section id="resume" class="view-resume-section p-3 p-lg-5">
+            <div class="container">
+                <h2 class="section-title font-weight-bold mb-3">Resume</h2>
+                <div class="section-intro mb-5">
+                    Check out my resume to see my full experience and skills.
+                </div>
+
+                <button id="viewResumeButton" class="btn btn-primary mb-3" type="button">
+                    View Resume
+                </button>
+
+                <!-- <div class="mb-4">
+                    <a class="btn btn-primary me-2 mb-3" href="resume.html"><i class="fas fa-file-download me-2"></i><span class="d-none d-md-inline">Download</span> Resume</a>
+                </div> -->
+
+                <!-- <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#resumeCollapse" aria-expanded="false" aria-controls="resumeCollapse">
+                    View Resume
+                </button>
+                <div class="collapse" id="resumeCollapse">
+                    <iframe src="resume.html" style="width: 100%; height: 600px; border: none;"></iframe>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- resume-section-hidden -->
+        <section id="resume-hidden" class="resume-section p-3 p-lg-5" style="display: none;">
+            <div class="container">
+                <main class="content-wrap">
+                    <article class="content">
+                        <!-- Contact Information -->
+                        <section class="contact-header">
+                            <h1 class="name">Ricardo Rios</h1>
+                            <p class="contact">
+                                Gainesville, FL
+                                <span class="sep">&bull;</span>
+                                <a href="mailto:riki.rios91@gmail.com">riki.rios91@gmail.com</a>
+                                <span class="sep">&bull;</span>
+                                <a href="tel:+1407852-8596">(407) 852-8596</a>
+                                <span class="sep">&bull;</span>
+                                <a href="https://www.linkedin.com/in/rickyriosp"
+                                    target="_blank">linkedin.com/in/rickyriosp</a>
+                                <span class="sep">&bull;</span>
+                                <a href="https://github.com/rickyriosp" target="_blank">github.com/rickyriosp</a>
+                            </p>
+                        </section>
+
+                        <!-- Relevant Experience -->
+                        <section id="experience" class="section">
+                            <h2 class="title">Experience</h2>
+
+                            <div class="item">
+                                <div class="row">
+                                    <div class="role"><strong>Cloud Software Engineer</strong></div>
+                                    <div class="info">
+                                        <span class="place">Remote, FL</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="org">CAPGEMINI</div>
+                                    <div class="info">
+                                        <time class="date">July 2022 - Present</time>
+                                    </div>
+                                </div>
+                                <ul class="bullets">
+                                    <li>
+                                        Maintained enterprise Java and SpringBoot applications hosted on AWS by
+                                        addressing incidents tracked in ServiceNow, applying troubleshooting
+                                        techniques to deliver solutions before SLA deadlines; resolved recurring
+                                        issues faster using tools such as Splunk.
+                                    </li>
+                                    <li>
+                                        Implemented bug fixes and feature enhancements within agile sprint cycles,
+                                        improving application stability and directly supporting business-critical
+                                        operations.
+                                    </li>
+                                    <li>
+                                        Collaborated with cross-functional teams including DevOps, QA, and Product
+                                        Management to ensure seamless integration and deployment of updates, enhancing
+                                        overall product quality and user satisfaction.
+                                    </li>
+                                    <li>
+                                        Enhanced observability by refactoring and expanding logging coverage across
+                                        services by ~30%, enabling faster root-cause analysis and reducing
+                                        time-to-resolution for recurring incidents.
+                                    </li>
+                                    <li>
+                                        Led Infrastructure-as-Code (IaC) initiative by implementing AWS CDK
+                                        (TypeScript) to provision and manage core resources (EC2, S3, Auto Scaling
+                                        Groups, Application Load Balancers), improving deployment speed, scalability,
+                                        and consistency.
+                                    </li>
+                                    <li>
+                                        Developed deployment pipelines using GitLab CI/CD, automating build, test, and
+                                        deployment of both infrastructure and applications, reducing release cycles
+                                        and manual errors.
+                                    </li>
+                                    <li>
+                                        Drove AWS cost optimization eff orts by auditing resource usage using AWS Cost
+                                        Explorer and Compute Optimizer, enforcing tagging strategy, and right-sizing
+                                        underutilized EC2 instances, cutting infrastructure spend by ~20%.
+                                    </li>
+                                    <li>
+                                        Configured services with AWS CDK to enable flexible scaling of cloud resources
+                                        while applying automation techniques to align computing capacity with demand,
+                                        improving EC2 cost efficiency.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Technical Skills & Projects -->
+                        <section id="resume-skills" class="section">
+                            <h2 class="title">Technical Skills & Projects</h2>
+
+                            <div class="item">
+                                <p class="details">
+                                    <strong>Programming:</strong> Java, Spring, Spring Boot, Hibernate, SQL, Oracle
+                                    SQL, Angular, TypeScript.
+                                </p>
+                                <p class="details">
+                                    <strong>Cloud:</strong> AWS, AWS CDK, Terraform, Infrastructure as Code (IaC),
+                                    Git, GitHub Actions, GitLab Pipelines, CI/CD.
+                                </p>
+                                <p class="details">
+                                    <strong>Tools:</strong> Splunk, Confluence, Jira, ServiceNow.
+                                </p>
+                            </div>
+
+                            <div class="item">
+                                <div class="row">
+                                    <div class="role"><strong>AI-Powered Web Application</strong></div>
+                                    <!-- <div class="info">
+                                    <time class="date">Jan. 2024 - May 2025</time>
+                                    </div> -->
+                                </div>
+                                <ul class="bullets">
+                                    <li>
+                                        Built and deployed a serverless, AI-powered web application during a hackathon
+                                        using a fully automated Infrastructure-as-Code (IaC) approach with Terraform.
+                                    </li>
+                                    <li>
+                                        Built and deployed a serverless web app using Terraform to provision AWS
+                                        services end-to-end (CloudFront, S3, API Gateway, Lambda, Bedrock).
+                                    </li>
+                                    <li>
+                                        Implemented secure CI/CD pipelines with GitHub Actions and OIDC, automating
+                                        Terraform deployments, S3 uploads, and CloudFront cache invalidation.
+                                    </li>
+                                    <li>
+                                        Packaged and deployed backend Lambda functions with dependencies via Lambda
+                                        Layers, securing API Gateway with API keys.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Certifications -->
+                        <section id="certifications" class="section">
+                            <h2 class="title">Certifications</h2>
+
+                            <div class="item">
+                                <p>
+                                    AWS Certified Solutions Architect - Professional | HashiCorp Terraform Associate
+                                    | CompTIA Security+
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Education -->
+                        <section id="education" class="section">
+                            <h2 class="title">Education</h2>
+
+                            <div class="item">
+                                <div class="row">
+                                    <div class="role">
+                                        <strong>Universidad de Las Palmas de Gran Canaria</strong>
+                                    </div>
+                                    <div class="info">
+                                        <span class="place">Las Palmas, Spain</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="org">Bachelor's Degree in Electrical Engineering</div>
+                                    <!-- <div class="info">
+                                    <time class="date">July 2022 - Present</time>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                </main>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr />
+        </div>
+
+        <!-- contact-section -->
+        <section id="contact" class="contact-section px-3 py-5 p-md-5">
+            <!-- container -->
+            <div class="container">
+                <form id="contact-form" class="contact-form col-lg-8 mx-lg-auto" method="post"
+                    action="/php/contact.php">
+                    <h3 class="text-center mb-3">Get In Touch</h3>
+                    <!-- form-row -->
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="sr-only" for="cname">Name</label>
+                            <input type="text" class="form-control" id="cname" name="cname" placeholder="Name"
+                                minlength="2" required="" aria-required="true" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="sr-only" for="cemail">Email</label>
+                            <input type="email" class="form-control" id="cemail" name="cemail" placeholder="Email"
+                                required="" aria-required="true" />
+                        </div>
+                        <div class="col-12">
+                            <label class="sr-only" for="csubject">Subject</label>
+                            <input type="text" class="form-control" id="csubject" name="csubject" placeholder="Subject"
+                                required="" aria-required="true" />
+                        </div>
+                        <div class="col-12">
+                            <label class="sr-only" for="cmessage">Your message</label>
+                            <textarea class="form-control" id="cmessage" name="cmessage"
+                                placeholder="Enter your message" rows="10" required="" aria-required="true"></textarea>
+                        </div>
+                        <!-- Google reCAPTCHA block -->
+                        <div class="col-12 form-group g-recaptcha"
+                            data-sitekey="6Lfu3bIbAAAAAN0sLBxYb8R432dBxLqSJH6qt8nM"></div>
+                        <div class="form-group col-12">
+                            <button type="submit" class="btn btn-block btn-primary py-2" id="contact-submit">
+                                Send Now
+                            </button>
+                            <p class="contact-feedback"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- footer-section -->
+        <footer class="footer footer-area text-center py-4 theme-bg-light no-hide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="">
+                            <i class="fas fa-map fa-2x"></i>
+                            <p class="">
+                                <a href="https://goo.gl/maps/PkgzHUGqA86Gyinv5" target="_blank">Florida, USA.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="">
+                            <i class="fas fa-phone fa-2x"></i>
+                            <p class=""><a href="tel:+14078528590">+1 407 852 8596</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="">
+                            <i class="fas fa-envelope fa-2x"></i>
+                            <p class="bio"><a href="mailto:ricardo@riosr.com">ricardo@riosr.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mini-footer">
+                    <div class="col-12 col-lg-5" style="height: 80px">
+                        <img id="footer-logo" src="assets/images/personal/Black logo - no background - large.svg"
+                            alt="Ricky Rios Logo" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+            <small class="copyright">Template Copyright &copy;
+                <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a> | Modified
+                by Ricky Rios</small>
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/tiny-slider/min/tiny-slider.js"></script>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/testimonials.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <!-- <script src="assets/js/demo/style-switcher.js"></script> -->
+
+    <!-- Dark Mode -->
+    <script src="assets/plugins/js-cookie.min.js"></script>
+    <script src="assets/js/dark-mode.js"></script>
+</body>
+
+</html>
