@@ -903,3 +903,4 @@ window.counterApiUrl = counterApiUrl; // Make it globally accessible
 //       </footer>
 //   </div>
 // `
+
