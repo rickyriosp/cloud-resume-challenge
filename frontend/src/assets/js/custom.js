@@ -161,21 +161,6 @@ document.querySelectorAll('.navbar-nav a').forEach((link) => {
 // const counterApiUrl = 'https://resume.riosr.com/api/counter';
 const counterApiUrl = window.counterApiUrl;
 
-// Get button handler
-// document.getElementById('get-counter-btn').addEventListener('click', async function () {
-//   try {
-//     const response = await fetch(counterApiUrl);
-//     if (response.ok) {
-//       const data = await response.json();
-//       document.getElementById('counter-value').textContent = data.value;
-//     } else {
-//       console.log('Error fetching counter value');
-//     }
-//   } catch (error) {
-//     console.log('Network error');
-//   }
-// });
-
 // Increment button handler
 document.getElementById('increment-counter-btn').addEventListener('click', async function () {
   try {
