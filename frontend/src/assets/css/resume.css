@@ -22,7 +22,7 @@ body .main-wrapper section.resume-section {
   color: var(--text);
   font-family: Cambria, 'Times New Roman', Times, serif;
   background-size: 20% !important;
-  background: #e5e8eb url('/frontend/assets/images/geometric-pattern.webp');
+  background: #e5e8eb url('/src/assets/images/geometric-pattern.webp');
   line-height: var(--leading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

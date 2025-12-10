@@ -1,14 +1,15 @@
 /*----------- Sidebar -----------*/
 .profile-section .profile-image {
-  content: url('/frontend/assets/images/personal/Black logo - no background - no name.svg');
+  content: url('/src/assets/images/personal/Black logo - no background - no name.svg');
 }
 
 body.dark-mode .profile-section .profile-image {
-  content: url('/frontend/assets/images/personal/White logo - no background - no name.svg');
+  content: url('/src/assets/images/personal/White logo - no background - no name.svg');
 }
 
 /*----------- About Me -----------*/
-#get-counter-btn, #increment-counter-btn {
+#get-counter-btn,
+#increment-counter-btn {
   height: 90%;
   font-size: 0.8rem;
 }
@@ -341,11 +342,11 @@ body.dark-mode .footer-area {
 }
 
 .footer-area .mini-footer #footer-logo {
-  content: url('/frontend/assets/images/personal/Black logo - no background - large.svg');
+  content: url('/src/assets/images/personal/Black logo - no background - large.svg');
 }
 
 body.dark-mode .footer-area .mini-footer #footer-logo {
-  content: url('/frontend/assets/images/personal/White logo - no background - large.svg');
+  content: url('/src/assets/images/personal/White logo - no background - large.svg');
 }
 
 /*----------- Modal -----------*/

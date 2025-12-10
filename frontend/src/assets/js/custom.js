@@ -151,26 +151,29 @@ document.querySelectorAll('.navbar-nav a').forEach(link => {
 
 
 /*----------- Counter API endpoint -----------*/
-const counterApiUrl = 'https://resume.riosr.com/counter';
+// const counterApiUrl = 'https://resume.riosr.com/counter';
+const counterApiUrl = window.counterApiUrl;
 
 // Get button handler
-document.getElementById('get-counter-btn').addEventListener('click', async function() {
-    try {
-        const response = await fetch(counterApiUrl);
-        if (response.ok) {
-            const data = await response.json();
-            document.getElementById('counter-value').textContent = data.value;
-        } else {
-            console.log('Error fetching counter value');
-        }
-    } catch (error) {
-        console.log('Network error');
-    }
-});
+// document.getElementById('get-counter-btn').addEventListener('click', async function() {
+//     try {
+//         const response = await fetch(counterApiUrl);
+//         if (response.ok) {
+//             const data = await response.json();
+//             document.getElementById('counter-value').textContent = data.value;
+//         } else {
+//             console.log('Error fetching counter value');
+//         }
+//     } catch (error) {
+//         console.log('Network error');
+//     }
+// });
 
 // Increment button handler
 document.getElementById('increment-counter-btn').addEventListener('click', async function() {
     try {
+        console.log('Incrementing counter at', counterApiUrl);
+
         const response = await fetch(counterApiUrl, {
             method: 'POST'
         });

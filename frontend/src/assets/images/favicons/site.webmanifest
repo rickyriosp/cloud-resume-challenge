@@ -1,14 +1,14 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Ricky Rios's Cloud Resume",
+  "short_name": "Ricky Rios",
   "icons": [
     {
-      "src": "/frontend/assets/images/favicons/android-chrome-192x192.png",
+      "src": "/src/assets/images/favicons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/frontend/assets/images/favicons/android-chrome-512x512.png",
+      "src": "/src/assets/images/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

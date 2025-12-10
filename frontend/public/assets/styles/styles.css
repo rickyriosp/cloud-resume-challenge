@@ -24,7 +24,7 @@ body {
   color: var(--text);
   font-family: Cambria, 'Times New Roman', Times, serif;
   background-size: contain !important;
-  background: #e5e8eb url('/frontend/public/frontend/assets/images/geometric-pattern.webp');
+  background: #e5e8eb url('/frontend/public/assets/images/geometric-pattern.webp');
   line-height: var(--leading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
