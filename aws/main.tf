@@ -1,6 +1,7 @@
 locals {
-  region = "us-east-1"
-  domain = "resume.riosr.com"
+  region       = "us-east-1"
+  domain       = "resume.riosr.com"
+  s3_origin_id = "cloudResumeS3Origin"
 }
 
 provider "aws" {

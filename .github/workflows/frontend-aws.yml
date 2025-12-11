@@ -1,0 +1,88 @@
+name: Frontend Application AWS CI/CD
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-aws.yml'
+  workflow_run:
+    workflows: ['Terraform IaC Deployment to AWS']
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    name: 'Get Terraform Outputs'
+    runs-on: ubuntu-latest
+
+    outputs:
+      aws_s3_bucket_name: ${{ steps.tf-outputs.outputs.aws_s3_bucket_name }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          role-session-name: GitHubActions-Deploy
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.0
+
+      - name: Terraform Outputs
+        id: tf-outputs
+        working-directory: aws
+        run: |
+          echo "aws_s3_bucket_name=${terraform output -raw aws_s3_frontend_bucket_name}" >> $GITHUB_OUTPUT
+
+  build:
+    name: 'Build Vitejs Frontend'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Vitejs Build
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifact@v5
+        with:
+          name: frontend-dist
+          path: frontend/dist
+          retention-days: 1
+
+  deploy:
+    name: 'Deploy Frontend to S3'
+    runs-on: ubuntu-latest
+    needs: [terraform, build]
+
+    steps:
+      - name: Download Production Artifacts
+        uses: actions/download-artifact@v5
+        with:
+          name: frontend-dist
+          path: ./frontend/dist
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          role-session-name: GitHubActions-Deploy
+
+      - name: Sync Files to S3
+        working-directory: frontend/dist
+        run: aws s3 sync . s3://${{ needs.terraform.outputs.aws_s3_bucket_name }} --delete

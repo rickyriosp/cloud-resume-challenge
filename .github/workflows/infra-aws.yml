@@ -1,4 +1,4 @@
-name: Terraform IaC Deployment
+name: Terraform IaC Deployment to AWS
 
 on:
   push:
@@ -9,13 +9,14 @@ on:
       - '.github/workflows/infra-aws.yml'
   workflow_dispatch:
 
+# Need ID token write permission to use OIDC
 permissions:
-  id-token: write
+  id-token: write # This is required for requesting the JWT
   contents: read
 
 jobs:
   terraform:
-    name: 'Terraform Apply'
+    name: 'Terraform AWS Deployment'
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +38,7 @@ jobs:
       - name: Terraform Init
         working-directory: aws
         run: terraform init
-      
+
       - name: Terraform Plan
         working-directory: aws
         run: terraform plan
