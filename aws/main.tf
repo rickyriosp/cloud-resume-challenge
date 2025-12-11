@@ -1,6 +1,7 @@
 locals {
   region       = "us-east-1"
-  domain       = "resume.riosr.com"
+  domain       = "riosr.com"
+  subdomain    = "resume"
   s3_origin_id = "cloudResumeS3Origin"
 }
 
