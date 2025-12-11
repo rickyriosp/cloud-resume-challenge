@@ -1,12 +1,12 @@
 # See https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html
 data "aws_iam_policy_document" "frontend_origin_bucket_policy" {
   statement {
-    sid    = "AllowCloudFrontServicePrincipalReadWriteOnlyAccess"
+    sid    = "AllowCloudFrontServicePrincipalReadWrite"
     effect = "Allow"
 
     principals {
-      type        = "AWS"
-      identifiers = ["*"]
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
     }
 
     actions = ["s3:GetObject", "s3:PutObject"]
