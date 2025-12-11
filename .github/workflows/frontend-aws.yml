@@ -25,6 +25,7 @@ jobs:
 
     outputs:
       aws_s3_bucket_name: ${{ steps.tf-outputs.outputs.aws_s3_bucket_name }}
+      cloudfront_distribution_id: ${{ steps.tf-outputs.outputs.cloudfront_distribution_id }}
 
     steps:
       - name: Checkout Repository
@@ -51,6 +52,7 @@ jobs:
         working-directory: aws
         run: |
           echo "aws_s3_bucket_name=$(terraform output -raw aws_s3_frontend_bucket_name)" >> $GITHUB_OUTPUT
+          echo "cloudfront_distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT
 
   build:
     name: 'Build Vitejs Frontend'
@@ -95,3 +97,7 @@ jobs:
       - name: Sync Files to S3
         working-directory: frontend/dist
         run: aws s3 sync . s3://${{ needs.terraform.outputs.aws_s3_bucket_name }} --delete
+      
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ needs.terraform.outputs.cloudfront_distribution_id }} --paths "/*"

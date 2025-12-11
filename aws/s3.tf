@@ -13,11 +13,11 @@ data "aws_iam_policy_document" "frontend_origin_bucket_policy" {
 
     resources = ["${aws_s3_bucket.frontend.arn}/*"]
 
-    # condition {
-    #   test     = "StringEquals"
-    #   variable = "AWS:SourceArn"
-    #   values   = [aws_cloudfront_distribution.frontend.arn]
-    # }
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [aws_cloudfront_distribution.s3_frontend.arn]
+    }
   }
 }
 
