@@ -38,6 +38,6 @@ resource "aws_s3_bucket_public_access_block" "frontend" {
 }
 
 resource "aws_s3control_bucket_policy" "frontend" {
-  bucket = aws_s3_bucket.frontend.id
+  bucket = aws_s3_bucket.frontend.arn
   policy = data.aws_iam_policy_document.frontend_origin_bucket_policy.json
 }
