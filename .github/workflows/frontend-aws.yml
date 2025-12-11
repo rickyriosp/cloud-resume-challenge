@@ -41,6 +41,10 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.14.0
+      
+      - name: Terraform Init
+        working-directory: aws
+        run: terraform init
 
       - name: Terraform Outputs
         id: tf-outputs
