@@ -46,7 +46,7 @@ jobs:
         id: tf-outputs
         working-directory: aws
         run: |
-          echo "aws_s3_bucket_name=${terraform output -raw aws_s3_frontend_bucket_name}" >> $GITHUB_OUTPUT
+          echo "aws_s3_bucket_name=$(terraform output -raw aws_s3_frontend_bucket_name)" >> $GITHUB_OUTPUT
 
   build:
     name: 'Build Vitejs Frontend'
