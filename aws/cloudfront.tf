@@ -1,5 +1,5 @@
 resource "aws_cloudfront_origin_access_control" "s3_bucket_frontend_oac" {
-  name                              = "s3_bucket_frontend_oac"
+  name                              = "${local.subdomain}.${local.domain}"
   description                       = "Frontend S3 Bucket Origin Access Control"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
