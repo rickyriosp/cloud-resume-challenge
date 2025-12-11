@@ -62,7 +62,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v6
 
-      - name: Vitejs Build
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: 'npm'
+
+      - name: Install Dependencies and Build
         working-directory: frontend
         run: |
           npm ci

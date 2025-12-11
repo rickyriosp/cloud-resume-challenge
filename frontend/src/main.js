@@ -1,3 +1,19 @@
+// Fontawesome Javascript
+import './assets/fontawesome/js/all.min.js';
+
+// Theme Javascript
+// import './assets/plugins/popper.min.js';
+// import './assets/plugins/bootstrap/js/bootstrap.min.js';
+// import './assets/plugins/tiny-slider/min/tiny-slider.js';
+
+// import './assets/js/jquery-3.6.0.min.js';
+// import './assets/js/testimonials.js';
+// import './assets/js/custom.js';
+
+// Dark mode
+// import './assets/js/dark-mode.js';
+// import './assets/plugins/js-cookie.min.js';
+
 const counterApiUrl = import.meta.env.VITE_COUNTER_API_URL;
 window.counterApiUrl = counterApiUrl; // Make it globally accessible
 

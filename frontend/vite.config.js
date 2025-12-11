@@ -21,4 +21,13 @@ const mockServer = {
 
 export default defineConfig({
   plugins: [mockServer],
+  base: './',
+  build: {
+    rollupOptions: {
+      external: [
+        // '@popperjs/core',
+      ],
+      
+    },
+  },
 });
