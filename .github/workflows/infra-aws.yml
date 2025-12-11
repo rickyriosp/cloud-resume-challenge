@@ -1,0 +1,47 @@
+name: Terraform IaC Deployment
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'aws/**'
+      - '.github/workflows/infra-aws.yml'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Terraform Apply'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          role-session-name: GitHubActions-Deploy
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.0
+
+      - name: Terraform Init
+        working-directory: aws
+        run: terraform init
+      
+      - name: Terraform Plan
+        working-directory: aws
+        run: terraform plan
+
+      - name: Terraform Apply
+        working-directory: aws
+        run: terraform apply -auto-approve
