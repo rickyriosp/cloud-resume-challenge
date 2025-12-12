@@ -14,7 +14,7 @@ rm -rf python/
 
 # Package Lambda code
 echo "📦 Packaging Lambda code..."
-zip -r lambda_package.zip view_counter/
+zip -r lambda_package.zip src/
 echo "✅ Created lambda_package.zip"
 
 # Package Python dependencies
@@ -27,7 +27,7 @@ if ! command -v pipenv &> /dev/null; then
     pip install --user pipenv
 fi
 
-if [ ! -f view_counter/Pipfile ]; then
+if [ ! -f src/Pipfile ]; then
   echo "❌ Pipfile not found in $(pwd). Please ensure it exists."
   exit 1
 fi
