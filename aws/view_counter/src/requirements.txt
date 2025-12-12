@@ -1,4 +1,0 @@
-FastAPI
-Mangum
-uvicorn
-```
