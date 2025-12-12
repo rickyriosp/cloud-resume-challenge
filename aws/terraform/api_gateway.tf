@@ -45,8 +45,8 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
 }
 
 resource "aws_apigatewayv2_stage" "viewcounter" {
-  deployment_id = aws_apigatewayv2_deployment.viewcounter.id
   api_id        = aws_apigatewayv2_api.viewcounter.id
+  deployment_id = aws_apigatewayv2_deployment.viewcounter.id
   name          = "default"
 }
 

@@ -71,7 +71,7 @@ jobs:
         working-directory: frontend
         run: |
           npm ci
-          npm run build
+          npm run build-aws
 
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v5
