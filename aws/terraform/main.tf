@@ -4,7 +4,7 @@ locals {
   subdomain      = "resume"
   api_subdomain  = "api-counter"
   s3_origin_id   = "cloudResumeS3Origin"
-  python_version = "python3.14"
+  python_version = "python3.12"
 }
 
 provider "aws" {
