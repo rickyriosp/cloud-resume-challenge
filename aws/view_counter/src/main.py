@@ -1,6 +1,7 @@
 import logging
-from fastapi import FastAPI
 from mangum import Mangum
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
