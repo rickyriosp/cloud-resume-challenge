@@ -54,3 +54,6 @@ echo "🎉 Packaging complete!"
 echo "📁 Generated files:"
 echo "   - lambda_package.zip"
 echo "   - dependencies.zip"
+
+ls -ltra
+ls -ltra python/ || echo "No python/ directory to list."

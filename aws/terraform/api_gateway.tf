@@ -11,7 +11,11 @@ resource "aws_apigatewayv2_integration" "viewcounter" {
   description            = "Cloud Resume Challenge View Counter Lambda"
   integration_method     = "ANY"
   integration_uri        = aws_lambda_function.viewcounter.invoke_arn
-  payload_format_version = "2.0"
+  payload_format_version = "2.0"  
+
+  depends_on = [
+    aws_lambda_function.viewcounter,
+  ]
 }
 
 resource "aws_apigatewayv2_route" "viewcounter" {
@@ -34,6 +38,7 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
   }
 
   depends_on = [
+    aws_lambda_function.viewcounter,
     aws_apigatewayv2_route.viewcounter,
     aws_lambda_permission.api_gateway_viewcounter
   ]
