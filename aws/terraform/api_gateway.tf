@@ -69,4 +69,8 @@ resource "aws_apigatewayv2_api_mapping" "viewcounter" {
   api_id      = aws_apigatewayv2_api.viewcounter.id
   domain_name = aws_apigatewayv2_domain_name.viewcounter.id
   stage       = aws_apigatewayv2_stage.viewcounter.name
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
