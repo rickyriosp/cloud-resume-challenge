@@ -31,7 +31,7 @@ resource "aws_lambda_function" "viewcounter" {
   filename      = "${path.module}/../lambda_package.zip"
   function_name = "view-counter"
   role          = aws_iam_role.viewcounter_lambda.arn
-  handler       = "main.lambda_handler"
+  handler       = "view_counter.main.handler"
   runtime       = local.python_version
 
   timeout = 10

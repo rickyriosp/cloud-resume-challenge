@@ -27,6 +27,11 @@ if ! command -v pipenv &> /dev/null; then
     pip install --user pipenv
 fi
 
+if [ ! -f Pipfile ]; then
+  echo "❌ Pipfile not found in $(pwd). Please ensure it exists."
+  exit 1
+fi
+
 # Generate requirements.txt from Pipfile
 echo "📋 Generating requirements.txt from Pipfile..."
 pipenv requirements > requirements.txt

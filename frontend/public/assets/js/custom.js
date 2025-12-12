@@ -173,7 +173,7 @@ document.getElementById('increment-counter-btn').addEventListener('click', async
       const data = await response.json();
       // Update all elements with id 'counter-value'
       document.querySelectorAll('#counter-value').forEach((el) => {
-        el.textContent = data.value;
+        el.textContent = data.counter;
       });
     } else {
       console.log('Error incrementing counter');
