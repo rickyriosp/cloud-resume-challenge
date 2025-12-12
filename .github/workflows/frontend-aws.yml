@@ -44,12 +44,12 @@ jobs:
           terraform_version: 1.14.0
       
       - name: Terraform Init
-        working-directory: aws
+        working-directory: aws/terraform
         run: terraform init
 
       - name: Terraform Outputs
         id: tf-outputs
-        working-directory: aws
+        working-directory: aws/terraform
         run: |
           echo "aws_s3_bucket_name=$(terraform output -raw aws_s3_frontend_bucket_name)" >> $GITHUB_OUTPUT
           echo "cloudfront_distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT

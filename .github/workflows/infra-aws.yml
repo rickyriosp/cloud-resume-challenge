@@ -30,19 +30,30 @@ jobs:
           role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
           role-session-name: GitHubActions-Deploy
 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+      
+      - name: Run Lambda Package Script
+        working-directory: aws
+        run: |
+          chmod +x ./package_code.sh
+          ./package_code.sh
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.14.0
 
       - name: Terraform Init
-        working-directory: aws
+        working-directory: aws/terraform
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: aws
+        working-directory: aws/terraform
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: aws
+        working-directory: aws/terraform
         run: terraform apply -auto-approve
