@@ -36,7 +36,7 @@ jobs:
           python-version: '3.14'
       
       - name: Run Lambda Package Script
-        working-directory: aws
+        working-directory: aws/view_counter
         run: |
           chmod +x ./package_code.sh
           ./package_code.sh
