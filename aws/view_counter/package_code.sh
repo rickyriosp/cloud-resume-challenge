@@ -34,7 +34,7 @@ fi
 
 # Generate requirements.txt from Pipfile
 echo "📋 Generating requirements.txt from Pipfile..."
-pipenv requirements > requirements.txt
+pipenv lock --requirements > requirements.txt
 cat requirements.txt
 
 # Install dependencies to python/ directory
