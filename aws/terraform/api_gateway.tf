@@ -74,7 +74,7 @@ resource "aws_apigatewayv2_stage" "viewcounter" {
   name          = "viewcounter"
 
   access_log_settings {
-    destination_arn = "arn:aws:logs:us-east-1:879381279300:log-group:/aws/apigateway/view-counter:*"#aws_cloudwatch_log_group.apigateway_log.arn
+    destination_arn = aws_cloudwatch_log_group.apigateway_log.arn
     format = "$context.identity.sourceIp - - [$context.requestTime] \"$context.httpMethod $context.routeKey $context.protocol\" $context.status $context.responseLength $context.requestId"
   }
 }
