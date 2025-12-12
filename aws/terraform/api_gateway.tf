@@ -1,3 +1,22 @@
+# IAM role for CloudWatch Logs
+data "aws_iam_policy_document" "apigateway_assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["apigateway.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+resource "aws_iam_role" "viewcounter_apigateway" {
+  name               = "api_gateway_cloudwatch_role"
+  assume_role_policy = data.aws_iam_policy_document.apigateway_assume_role.json
+}
+
 resource "aws_apigatewayv2_api" "viewcounter" {
   name          = "cloud-resume-view-counter"
   protocol_type = "HTTP"
@@ -53,10 +72,6 @@ resource "aws_apigatewayv2_stage" "viewcounter" {
   api_id        = aws_apigatewayv2_api.viewcounter.id
   deployment_id = aws_apigatewayv2_deployment.viewcounter.id
   name          = "viewcounter"
-  access_log_settings {
-    destination_arn = "arn:aws:logs:us-east-1:879381279300:log-group:/aws/apigatewayv2/view-counter:*"
-    format          = "requestId: $context.requestId, ip: $context.identity.sourceIp, caller: $context.identity.caller, user: $context.identity.user, requestTime: $context.requestTime, httpMethod: $context.httpMethod, resourcePath: $context.resourcePath, status: $context.statusCode"
-  }
 }
 
 resource "aws_apigatewayv2_domain_name" "viewcounter" {
@@ -77,4 +92,8 @@ resource "aws_apigatewayv2_api_mapping" "viewcounter" {
   lifecycle {
     create_before_destroy = true
   }
+}
+
+resource "aws_api_gateway_account" "viewcounter" {
+  cloudwatch_role_arn = aws_iam_role.cloudwatch.arn
 }
