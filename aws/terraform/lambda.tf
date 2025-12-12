@@ -43,7 +43,7 @@ resource "aws_lambda_function" "viewcounter" {
 resource "aws_lambda_permission" "api_gateway_viewcounter" {
   statement_id  = "AllowViewCounterAPIInvoke"
   action        = "lambda:InvokeFunction"
-  function_name = "viewcounter"
+  function_name = "view-counter"
   principal     = "apigateway.amazonaws.com"
 
   # The /* part allows invocation from any stage, method and resource path
