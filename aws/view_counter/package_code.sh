@@ -35,10 +35,17 @@ fi
 # Generate requirements.txt from Pipfile
 echo "📋 Generating requirements.txt from Pipfile..."
 pipenv requirements > requirements.txt
+cat requirements.txt
 
 # Install dependencies to python/ directory
 echo "📥 Installing dependencies to python/ directory..."
 pip install -r requirements.txt -t python/
+
+# Check if python/ directory is empty
+if [ -z "$(ls -A python/)" ]; then
+  echo "❌ No dependencies were installed to python/. The dependencies.zip would be empty!"
+  exit 1
+fi
 
 # Package dependencies
 echo "🗜️  Creating dependencies.zip..."

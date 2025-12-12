@@ -61,4 +61,4 @@ jobs:
         working-directory: aws/terraform
         run: |
           ls -ltra
-          terraform apply -auto-approve
+          # terraform apply -auto-approve
