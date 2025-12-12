@@ -33,6 +33,7 @@ def increment_counter():
     counter["value"] += 1
     return {"counter": counter["value"]}
 
+# Create Mangum adapter with proper configuration for API Gateway
 handler = Mangum(app)
 
 def lambda_handler(event, context):
