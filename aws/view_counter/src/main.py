@@ -20,6 +20,10 @@ app.add_middleware(
 
 counter = {"value": 0}
 
+@app.get("/")
+async def root():
+    return {"message": "View Counter API - Use /api/counter to interact with the counter"}
+
 @app.get("/api/counter")
 def get_counter():
     return {"counter": counter["value"]}
