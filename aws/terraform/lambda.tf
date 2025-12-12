@@ -25,6 +25,9 @@ resource "aws_lambda_layer_version" "viewcounter_dependencies" {
 
   compatible_runtimes      = [local.python_version]
   compatible_architectures = ["x86_64", "arm64"]
+
+  # Trigger replacement when dependencies.zip changes
+  source_code_hash = filebase64sha256("${path.module}/dependencies.zip")
 }
 
 resource "aws_lambda_function" "viewcounter" {
@@ -37,6 +40,9 @@ resource "aws_lambda_function" "viewcounter" {
   timeout = 10
 
   layers = [aws_lambda_layer_version.viewcounter_dependencies.arn]
+
+  # Trigger replacement when lambda_package.zip changes
+  source_code_hash = filebase64sha256("${path.module}/lambda_package.zip")
 }
 
 # Permission for API Gateway to invoke Lambda
