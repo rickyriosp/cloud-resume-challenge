@@ -30,7 +30,12 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
   description = "Cloud Resume Challenge View Counter deployment"
 
   triggers = {
-    redeployment = sha1(jsonencode(aws_apigatewayv2_api.viewcounter.body))
+    # redeployment = sha1(jsonencode(aws_apigatewayv2_api.viewcounter.body))
+    redeployment = sha1(join(",", tolist([
+      jsonencode(aws_apigatewayv2_api.viewcounter.body),
+      jsonencode(aws_apigatewayv2_integration.viewcounter),
+      jsonencode(aws_apigatewayv2_route.viewcounter),
+    ])))
   }
 
   lifecycle {
