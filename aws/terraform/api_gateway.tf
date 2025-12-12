@@ -72,6 +72,11 @@ resource "aws_apigatewayv2_stage" "viewcounter" {
   api_id        = aws_apigatewayv2_api.viewcounter.id
   deployment_id = aws_apigatewayv2_deployment.viewcounter.id
   name          = "viewcounter"
+
+  access_log_settings {
+    destination_arn = "arn:aws:logs:us-east-1:879381279300:log-group:/aws/apigateway/view-counter:*"#aws_cloudwatch_log_group.apigateway_log.arn
+    format = "$context.identity.sourceIp - - [$context.requestTime] \"$context.httpMethod $context.routeKey $context.protocol\" $context.status $context.responseLength $context.requestId"
+  }
 }
 
 resource "aws_apigatewayv2_domain_name" "viewcounter" {
