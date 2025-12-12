@@ -39,24 +39,24 @@ def lambda_handler(event, context):
     """
     AWS Lambda handler function that processes API Gateway events.
     """
+    try:
+        # Log the incoming event
+        logger.info(f"Received event: {event}")
+        logger.info(f"Event type: {type(event)}")
 
-    # Log the incoming event
-    logger.info(f"Received event: {event}")
-    logger.info(f"Event type: {type(event)}")
+        # Check if this is an API Gateway event
+        if "httpMethod" in event or "requestContext" in event:
+            logger.info("Processing API Gateway event")
+            # return handler(event, context)
+        else:
+            logger.error("Event does not appear to be from API Gateway")
+            return {
+                "statusCode": 400,
+                "headers": {"Content-Type": "application/json"},
+                "body": '{"error": "Invalid event source"}'
+            }
 
-    # Check if this is an API Gateway event
-    if "httpMethod" in event or "requestContext" in event:
-        logger.info("Processing API Gateway event")
-        # return handler(event, context)
-    else:
-        logger.error("Event does not appear to be from API Gateway")
-        return {
-            "statusCode": 400,
-            "headers": {"Content-Type": "application/json"},
-            "body": '{"error": "Invalid event source"}'
-        }
-
-    return handler(event, context)
+        return handler(event, context)
 
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}")
