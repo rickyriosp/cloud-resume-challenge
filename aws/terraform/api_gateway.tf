@@ -95,5 +95,5 @@ resource "aws_apigatewayv2_api_mapping" "viewcounter" {
 }
 
 resource "aws_api_gateway_account" "viewcounter" {
-  cloudwatch_role_arn = aws_iam_role.cloudwatch.arn
+  cloudwatch_role_arn = aws_iam_role.viewcounter_apigateway.arn
 }
