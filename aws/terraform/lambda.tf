@@ -18,14 +18,14 @@ resource "aws_iam_role" "viewcounter_lambda" {
 }
 
 # Common dependencies layer
-resource "aws_lambda_layer_version" "viewcounter_dependencies" {
-  filename    = "${path.module}/dependencies.zip"
-  layer_name  = "viewcounter_dependencies_layer"
-  description = "Common dependencies for viewcounter Lambda functions"
+# resource "aws_lambda_layer_version" "viewcounter_dependencies" {
+#   filename    = "${path.module}/dependencies.zip"
+#   layer_name  = "viewcounter_dependencies_layer"
+#   description = "Common dependencies for viewcounter Lambda functions"
 
-  compatible_runtimes      = [local.python_version]
-  compatible_architectures = ["x86_64", "arm64"]
-}
+#   compatible_runtimes      = [local.python_version]
+#   compatible_architectures = ["x86_64", "arm64"]
+# }
 
 resource "aws_lambda_function" "viewcounter" {
   filename      = "${path.module}/lambda_package.zip"
