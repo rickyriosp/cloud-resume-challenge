@@ -19,7 +19,7 @@ resource "aws_iam_role" "viewcounter_lambda" {
 
 # Common dependencies layer
 resource "aws_lambda_layer_version" "viewcounter_dependencies" {
-  filename    = "${path.module}/dependencies.zip"
+  filename    = "${path.root}/dependencies.zip"
   layer_name  = "viewcounter_dependencies_layer"
   description = "Common dependencies for viewcounter Lambda functions"
 
@@ -28,7 +28,7 @@ resource "aws_lambda_layer_version" "viewcounter_dependencies" {
 }
 
 resource "aws_lambda_function" "viewcounter" {
-  filename      = "${path.module}/lambda_package.zip"
+  filename      = "${path.root}/lambda_package.zip"
   function_name = "view-counter"
   role          = aws_iam_role.viewcounter_lambda.arn
   handler       = "view_counter.main.handler"

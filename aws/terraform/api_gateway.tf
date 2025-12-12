@@ -32,6 +32,11 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
   lifecycle {
     create_before_destroy = true
   }
+
+  depends_on = [
+    aws_apigatewayv2_route.viewcounter,
+    aws_lambda_permission.api_gateway_viewcounter
+  ]
 }
 
 resource "aws_apigatewayv2_stage" "viewcounter" {
