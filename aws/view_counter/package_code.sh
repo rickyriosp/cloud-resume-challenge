@@ -54,5 +54,3 @@ echo "🎉 Packaging complete!"
 echo "📁 Generated files:"
 echo "   - lambda_package.zip"
 echo "   - dependencies.zip"
-
-ls -ltra

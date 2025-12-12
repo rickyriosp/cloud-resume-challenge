@@ -59,4 +59,6 @@ jobs:
 
       - name: Terraform Apply
         working-directory: aws/terraform
-        run: terraform apply -auto-approve
+        run: |
+          ls -ltra
+          terraform apply -auto-approve
