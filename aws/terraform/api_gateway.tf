@@ -9,7 +9,7 @@ resource "aws_apigatewayv2_integration" "viewcounter" {
 
   connection_type        = "INTERNET"
   description            = "Cloud Resume Challenge View Counter Lambda"
-  integration_method     = "ANY"
+  integration_method     = "POST"
   integration_uri        = aws_lambda_function.viewcounter.invoke_arn
   payload_format_version = "2.0"  
 
