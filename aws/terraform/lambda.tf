@@ -36,7 +36,7 @@ resource "aws_lambda_function" "viewcounter" {
 
   timeout = 10
 
-  layers = [aws_lambda_layer_version.viewcounter_dependencies.arn]
+#   layers = [aws_lambda_layer_version.viewcounter_dependencies.arn]
 }
 
 # Permission for API Gateway to invoke Lambda
