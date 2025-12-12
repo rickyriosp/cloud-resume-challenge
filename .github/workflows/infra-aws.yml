@@ -40,6 +40,9 @@ jobs:
         run: |
           chmod +x ./package_code.sh
           ./package_code.sh
+          # Move the generated zip files to the terraform directory
+          mv lambda_package.zip ../terraform/
+          mv dependencies.zip ../terraform/
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
