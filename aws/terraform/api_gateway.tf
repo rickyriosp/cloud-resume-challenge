@@ -32,9 +32,9 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
   triggers = {
     # redeployment = sha1(jsonencode(aws_apigatewayv2_api.viewcounter.body))
     redeployment = sha1(join(",", tolist([
-      jsonencode(aws_apigatewayv2_api.viewcounter.body),
-      jsonencode(aws_apigatewayv2_integration.viewcounter),
-      jsonencode(aws_apigatewayv2_route.viewcounter),
+      # jsonencode(aws_apigatewayv2_api.viewcounter.body),
+      jsonencode(aws_apigatewayv2_integration.viewcounter.id),
+      jsonencode(aws_apigatewayv2_route.viewcounter.id),
     ])))
   }
 
@@ -52,7 +52,7 @@ resource "aws_apigatewayv2_deployment" "viewcounter" {
 resource "aws_apigatewayv2_stage" "viewcounter" {
   api_id        = aws_apigatewayv2_api.viewcounter.id
   deployment_id = aws_apigatewayv2_deployment.viewcounter.id
-  name          = "default"
+  name          = "viewcounter"
 }
 
 resource "aws_apigatewayv2_domain_name" "viewcounter" {
@@ -68,5 +68,5 @@ resource "aws_apigatewayv2_domain_name" "viewcounter" {
 resource "aws_apigatewayv2_api_mapping" "viewcounter" {
   api_id      = aws_apigatewayv2_api.viewcounter.id
   domain_name = aws_apigatewayv2_domain_name.viewcounter.id
-  stage       = aws_apigatewayv2_stage.viewcounter.id
+  stage       = aws_apigatewayv2_stage.viewcounter.name
 }
