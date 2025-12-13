@@ -161,6 +161,33 @@ document.querySelectorAll('.navbar-nav a').forEach((link) => {
 // const counterApiUrl = 'https://resume.riosr.com/api/counter';
 const counterApiUrl = window.counterApiUrl;
 
+// Fetch and display the current counter value on page load
+async function fetchCounter() {
+  try {
+    console.log('Fetching counter from', counterApiUrl);
+    const response = await fetch(counterApiUrl);
+    if (response.ok) {
+      const data = await response.json();
+      document.querySelectorAll('#counter-value').forEach((el) => {
+        el.textContent = data.counter;
+      });
+    } else {
+      console.log('Error fetching counter');
+    }
+  } catch (error) {
+    console.log('Network error');
+  }
+}
+
+// Trigger on every page load
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.counterApiUrl) {
+    fetchCounter();
+  } else {
+    console.log('counterApiUrl is not defined');
+  }
+});
+
 // Increment button handler
 document.getElementById('increment-counter-btn').addEventListener('click', async function () {
   try {
