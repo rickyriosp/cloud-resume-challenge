@@ -9,9 +9,4 @@ resource "aws_dynamodb_table" "viewcounter" {
     name = "id"
     type = "S"
   }
-
-  attribute {
-    name = "value"
-    type = "N"
-  }
 }
