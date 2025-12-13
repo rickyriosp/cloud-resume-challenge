@@ -3,10 +3,15 @@ resource "aws_dynamodb_table" "viewcounter" {
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
-  hash_key       = "Counter"
+  hash_key       = "id"
 
   attribute {
-    name = "Counter"
+    name = "id"
+    type = "S"
+  }
+
+  attribute {
+    name = "value"
     type = "N"
   }
 }
