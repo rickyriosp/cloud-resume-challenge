@@ -1,3 +1,5 @@
+import os
+import boto3
 import logging
 from mangum import Mangum
 from fastapi import FastAPI
@@ -20,7 +22,7 @@ app.add_middleware(
 )
 
 # DynamoDB setup
-TABLE_NAME = os.getenv("VIEW_COUNTER_TABLE", "ViewCounter") || "ViewCounter" # adjust if your table name differs
+TABLE_NAME = os.getenv("VIEW_COUNTER_TABLE", "ViewCounter") # adjust if your table name differs
 ITEM_KEY = {"id": "global"}  # adjust if your partition key name differs
 
 dynamodb = boto3.resource("dynamodb")

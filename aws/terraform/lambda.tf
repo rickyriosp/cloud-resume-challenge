@@ -41,6 +41,12 @@ resource "aws_lambda_function" "viewcounter" {
 
   layers = [aws_lambda_layer_version.viewcounter_dependencies.arn]
 
+  environment {
+    variables = {
+      VIEW_COUNTER_TABLE = aws_dynamodb_table.viewcounter.name
+    }
+  }
+
   # Trigger replacement when lambda_package.zip changes
   source_code_hash = filebase64sha256("${path.module}/lambda_package.zip")
 }
