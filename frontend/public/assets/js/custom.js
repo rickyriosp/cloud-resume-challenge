@@ -179,26 +179,13 @@ async function fetchCounter() {
   }
 }
 
-// Trigger on every page load
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.counterApiUrl) {
-    fetchCounter();
-  } else {
-    console.log('counterApiUrl is not defined');
-  }
-});
-
-// Increment button handler
-document.getElementById('increment-counter-btn').addEventListener('click', async function () {
+// Increment counter (POST)
+async function incrementCounterOnce() {
   try {
     console.log('Incrementing counter at', counterApiUrl);
-
-    const response = await fetch(counterApiUrl, {
-      method: 'POST',
-    });
+    const response = await fetch(counterApiUrl, { method: 'POST' });
     if (response.ok) {
       const data = await response.json();
-      // Update all elements with id 'counter-value'
       document.querySelectorAll('#counter-value').forEach((el) => {
         el.textContent = data.counter;
       });
@@ -208,4 +195,28 @@ document.getElementById('increment-counter-btn').addEventListener('click', async
   } catch (error) {
     console.log('Network error');
   }
+}
+
+// Trigger on every page load
+document.addEventListener('DOMContentLoaded', async () => {
+  if (!window.counterApiUrl) {
+    console.log('counterApiUrl is not defined');
+    return;
+  }
+
+  // Fetch current value
+  await fetchCounter();
+
+  // Increment once per visitor per day
+  const key = 'counterIncrementedAt';
+  const last = localStorage.getItem(key);
+  const today = new Date().toDateString();
+
+  if (last !== today) {
+    await incrementCounterOnce();
+    localStorage.setItem(key, today);
+  }
 });
+
+// Increment button handler
+document.getElementById('increment-counter-btn').addEventListener('click', incrementCounterOnce());
