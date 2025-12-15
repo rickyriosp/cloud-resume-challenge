@@ -219,4 +219,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Increment button handler
-document.getElementById('increment-counter-btn').addEventListener('click', incrementCounterOnce());
+document.getElementById('increment-counter-btn').addEventListener('click', incrementCounterOnce);
