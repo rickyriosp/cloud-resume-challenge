@@ -15,7 +15,7 @@ app = FastAPI(title="View Counter", description="Lambda View Counter API", versi
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["https://resume.riosr.com"],  # In production, replace with specific origins
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True,
