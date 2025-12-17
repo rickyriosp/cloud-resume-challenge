@@ -8,7 +8,7 @@ This project implements a simple counter API using FastAPI and AWS Lambda. It pr
 view_counter
 ├── src
 │   ├── main.py          # Main logic for the Lambda function and FastAPI application
-│   └── requirements.txt  # Dependencies required for the project
+│   └── requirements.txt # Dependencies required for the project
 ├── tests
 │   └── test_main.py     # Unit tests for the API endpoints
 └── README.md            # Project documentation
@@ -52,7 +52,3 @@ To run the unit tests, navigate to the `tests` directory and execute:
 ```
 pytest test_main.py
 ```
-
-## License
-
-This project is licensed under the MIT License.
