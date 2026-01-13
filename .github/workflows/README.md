@@ -239,7 +239,7 @@ Both pipelines support manual triggering via `workflow_dispatch`:
 
 ### Viewing Logs
 
-1. Navigate to **Actions** tab
+1. Navigate to the **Actions** tab
 2. Click on the workflow run
 3. Click on individual job to see detailed logs
 4. Expand step to see command output
@@ -259,8 +259,8 @@ For testing workflow changes:
 
 View current pipeline status in the repository README or Actions tab:
 
-[![Infrastructure](../../actions/workflows/infra-aws.yml/badge.svg)](../../actions/workflows/infra-aws.yml)
-[![Frontend](../../actions/workflows/frontend-aws.yml/badge.svg)](../../actions/workflows/frontend-aws.yml)
+- [Infrastructure](./infra-aws.yml)
+- [Frontend](./frontend-aws.yml)
 
 ---
 
